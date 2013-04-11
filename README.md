@@ -9,12 +9,19 @@ Improved pbcopy/pbpaste for OSX
 ## Usage
 
 ```
-$ pb
+$ pb [type]
+$ get_data | pb -s [type]
 ```
 
-on the command line to get HTML content.
+For example, to grab the contents of the html pasteboard and put it on the 
+plaintext pasteboard:
 
-In JS:
+
+```bash
+$ pb html | pb -s
+```
+
+From node, `pb` exposes `get(type)` and `set(type, data)` functions
 
 ```
 var PB = require('pb');
