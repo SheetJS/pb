@@ -1,5 +1,6 @@
 var $ = require('nodobjc');
 $.framework('AppKit');
+var pool = $.NSAutoreleasePool('alloc')('init');
 
 var mytype = exports.mytype = function(type) {
 	if(!type) return [$.NSStringPboardType, 's']; 

@@ -1,6 +1,6 @@
 {
 	"name": "pbjs",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"author": "Niggler",
 	"description": "Node interface to OSX Pasteboard",
 	"keywords": [ "osx", "mac", "clipboard" ],
