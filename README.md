@@ -4,7 +4,7 @@ Improved pbcopy/pbpaste for OSX
 
 ## Installation
 
-`npm install pbjs`
+`npm install pb`
 
 ## Usage
 

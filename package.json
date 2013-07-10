@@ -1,6 +1,6 @@
 {
-	"name": "pbjs",
-	"version": "0.1.2",
+	"name": "pb",
+	"version": "0.2.0",
 	"author": "Niggler",
 	"description": "Node interface to OSX Pasteboard",
 	"keywords": [ "osx", "mac", "clipboard" ],
@@ -9,6 +9,7 @@
 	"dependencies": {
 		"NodObjC":""
 	},
+	"license": "MIT",
 	"repository": { "type":"git", "url": "git://github.com/Niggler/pb.git" },
 	"bugs": { "url": "https://github.com/Niggler/pb/issues" },
 	"preferGlobal":"true"
