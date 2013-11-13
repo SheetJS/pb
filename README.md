@@ -21,10 +21,18 @@ plaintext pasteboard:
 $ pb html | pb -s
 ```
 
-From node, `pb` exposes `get(type)` and `set(type, data)` functions
+From node, `pb` exposes:
+
+- `get(type)`: get pasteboard data from specified pasteboard
+- `set(type, data)`: set pasteboard data (overwrites other pasteboards)
 
 ```
-var PB = require('pb');
+var pb = require('pb');
 var HTMLOutput = pb.get('html');
 var textOutput = pb.get();
 ```
+
+## Supported Pasteboards
+
+- `NSStringPboardType` (plaintext) 
+- `NSHTMLPboardType` (HTML) 
