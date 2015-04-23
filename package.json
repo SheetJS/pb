@@ -1,27 +1,20 @@
 {
   "name": "pb",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "author": "SheetJS",
-  "description": "Node interface to OSX Pasteboard",
-  "keywords": [
-    "osx",
-    "mac",
-    "clipboard"
-  ],
+  "description": "Interface to OSX Pasteboard",
+  "keywords": [ "osx", "mac", "pasteboard", "clipboard" ],
   "bin": {
-    "pb": "./pboard.njs"
+    "pb": "./bin/pboard.njs"
   },
-  "main": "./pb",
+  "main": "pb.js",
   "dependencies": {
-    "NodObjC": "0.0.15"
+    "nodobjc": "",
+    "commander": ""
   },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/SheetJS/pb.git"
-  },
-  "bugs": {
-    "url": "https://github.com/SheetJS/pb/issues"
-  },
-  "preferGlobal": "true"
+  "repository": { "type": "git", "url": "git://github.com/SheetJS/pb.git" },
+  "preferGlobal": "true",
+  "bugs": { "url": "https://github.com/SheetJS/pb/issues" },
+  "license": "Apache-2.0",
+  "engines": { "node": ">=0.8" }
 }
