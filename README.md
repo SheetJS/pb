@@ -10,31 +10,43 @@ provide a more convenient way to access the pasteboard from node.
 
 With [npm](https://www.npmjs.org/package/pb), global installation is easiest:
 
-    $ npm install -g pb
+```bash
+$ npm install -g pb
+```
 
 Depending on your system configuration, you may need to run as root:
 
-    $ sudo npm install -g pb
+```bash
+$ sudo npm install -g pb
+```
 
 ## Command-Line Tool Usage
 
 To get data from a specific pasteboard:
 
-    $ pb [type]
-    $ pb -m <type>
+```bash
+$ pb [type]
+$ pb -m <type>
+```
 
 To set a specific pasteboard, be sure to pipe data into pb:
 
-    $ get_data | pb -s [type]
+```bash
+$ get_data | pb -s [type]
+```
 
 To list available pasteboards:
 
-    $ pb -l
+```bash
+$ pb -l
+```
 
 For example, to grab the contents of the HTML pasteboard and put it on the
 plaintext pasteboard:
 
-    $ pb -m html | pb -s
+```bash
+$ pb -m html | pb -s
+```
 
 ## Library Usage
 
@@ -42,12 +54,13 @@ From node, `pb` exposes:
 
 - `get(type)`: get pasteboard data from specified pasteboard
 - `set(type, data)`: set pasteboard data (overwrites other pasteboards)
+- `available()`: enumerate populated pasteboards
 - `gettypes()`: enumerate available pasteboards
 
 For example, to grab the contents of the HTML pasteboard and put it on the
 plaintext pasteboard:
 
-```
+```js
 var pb = require('pb');
 var HTMLOutput = pb.get('html');
 var textOutput = pb.get();
