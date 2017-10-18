@@ -5,7 +5,7 @@ var $ = require('nodobjc');
 $.framework('AppKit');
 $.NSAutoreleasePool('alloc')('init');
 
-exports.version = '0.3.1';
+exports.version = '0.3.2';
 
 var basetypes = [ 'HTML', 'PNG', 'TEXT', 'RTF' ];
 var alltypes;
@@ -36,7 +36,7 @@ exports.get = function get(type/*:string*/)/*:any*/ {
 	var t = tt[0], o = tt[1];
 
 	switch(o) {
-		case 's': return x('stringForType',t);
+		case 's': return String(x('stringForType',t));
 		case 'i': {
 			var y = $.NSImage('alloc')('initWithPasteboard', x);
 			return y;
@@ -44,7 +44,7 @@ exports.get = function get(type/*:string*/)/*:any*/ {
 	}
 };
 
-exports.set = function set(type/*:string*/, str/*:string*/)/*:void*/ {
+exports.set = function set(type/*:string*/, str/*:string*/)/*:boolean*/ {
 	var x = $.NSPasteboard('generalPasteboard');
 	var tt = mytype(type);
 	var t = tt[0], o = tt[1], data;
@@ -54,6 +54,7 @@ exports.set = function set(type/*:string*/, str/*:string*/)/*:void*/ {
 			data = $.NSString('stringWithUTF8String', str);
 			return x('setString', data, 'forType', t);
 	}
+	return false;
 };
 
 function NSArray2ArrayStr(arr)/*:Array<string>*/ {
