@@ -20,7 +20,7 @@ program.parse(process.argv);
 var type = program.mode || program.args[0] || 'text';
 if(!X.mytype(type)[0]) throw new Error("Unsupported type " + type);
 
-if(program.listModes) { console.log(X.gettypes().join("\n")); process.exit(0); }
+if(program.listModes) { console.log(X.available().join("\n")); process.exit(0); }
 if(program.set) {
 	var data = "";
 	process.stdin.on('data', function(d) { data += d; });

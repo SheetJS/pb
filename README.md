@@ -7,47 +7,32 @@ but have no easy way of accessing the HTML pasteboard.  This module and CLI tool
 provide a more convenient way to access the pasteboard from node.
 
 
-## Installation
-
-With [npm](https://www.npmjs.org/package/pb):
-
-```bash
-$ npm install -g pb
-```
-
-Depending on your system configuration, you may need to run as root:
-
-```bash
-$ sudo npm install -g pb
-```
-
-
 ## Command-Line Tool Usage
 
 To get data from a specific pasteboard:
 
 ```bash
-$ pb [type]
-$ pb -m <type>
+$ npx pb [type]
+$ npx pb -m <type>
 ```
 
 To set a specific pasteboard, pipe data into pb:
 
 ```bash
-$ get_data | pb -s [type]
+$ get_data | npx pb -s [type]
 ```
 
 To list available pasteboards:
 
 ```bash
-$ pb -l
+$ npx pb -l
 ```
 
 For example, to grab the contents of the HTML pasteboard and put it on the
 plaintext pasteboard:
 
 ```bash
-$ pb -m html | pb -s
+$ npx pb -m html | npx pb -s
 ```
 
 
@@ -57,8 +42,7 @@ From node, `pb` exposes:
 
 - `get(type)`: get pasteboard data from specified pasteboard
 - `set(type, data)`: set pasteboard data (overwrites other pasteboards)
-- `available()`: enumerate populated pasteboards
-- `gettypes()`: enumerate available pasteboards
+- `available()`: enumerate available pasteboards
 
 This example gets the pasteboard HTML data and copies to plaintext pasteboard:
 
